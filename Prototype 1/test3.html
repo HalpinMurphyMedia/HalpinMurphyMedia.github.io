@@ -1,0 +1,46 @@
+<!--//prototype to list off all fixtures and scores in 15 16 season-->
+<!DOCTYPE html>
+<html>
+<body>
+<p>List of 2015/2016 SPL fixtures plus scores</p>
+<p id="text"></p>
+</body>
+    
+
+<script>
+var xhttp;
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function()
+{
+    if (xhttp.readyState == 4 && xhttp.status == 200) 
+    {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetFixturesByLeagueAndSeason?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&seasonDateString=1516&league=ScottishPremierLeauge", true);
+xhttp.send();
+
+function myFunction(xml)
+    {
+    var home, away, hTeam, aTeam, i, txt, xmlDoc; 
+    xmlDoc = xml.responseXML;
+    txt = "";
+    home = xmlDoc.getElementsByTagName("HomeGoals");
+    away = xmlDoc.getElementsByTagName("AwayGoals");
+    hTeam = xmlDoc.getElementsByTagName("HomeTeam");
+    aTeam = xmlDoc.getElementsByTagName("AwayTeam");
+        
+    for (i = 0; i < home.length; i++) 
+    { 
+        txt += hTeam[i].childNodes[0].nodeValue + " ";
+        txt += home[i].childNodes[0].nodeValue + " " + "V" + " ";
+        txt += away[i].childNodes[0].nodeValue + " ";
+        txt += aTeam[i].childNodes[0].nodeValue + "<br>";
+
+
+
+    }
+    document.getElementById("text").innerHTML = txt;
+}
+</script>
+</html>

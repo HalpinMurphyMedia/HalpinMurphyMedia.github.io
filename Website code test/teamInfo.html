@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Footie Stats Prototype</title>
+<link href="styles/global.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<a name="top"></a>
+	<div class="header">
+		<div class="head-img">
+			<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
+		<!-- end .head-img --></div> 
+      
+		<div class="head-text">
+        	<p>Scottish Premier League by Footie Stats</p>
+        <!-- end .head-text --></div>
+	<!-- end .header --></div>
+    <div class="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
+		</ul> 
+        <!-- end .nav --></div>
+    
+<div class="container">
+    <div class="mteams"> 
+        <h1 id="teamName">Blank</h1>
+        <h3 id="stadium">Blank</h3>
+        <h4 id="country">Blank</h4>
+        <h4>Players</h4>
+        <p id="players">
+        </p>
+    </div>
+  <div class="content">
+   	
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+	<div class="footer">
+		<div class="top">
+            <a href='#top'>Back to Top</a>
+		<!-- end .top --></div>
+    <p>Footie Stats and HMM logos are property of their respective owners</p>
+    <a href="hmm.html">Site created by HMM Media</a>
+    <!-- end .footer --></div>
+</body>
+<script>
+var teamId=localStorage.getItem("teamID");    
+getDate();
+    
+var xhttp;
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function()
+{
+    if (xhttp.readyState == 4 && xhttp.status == 200) 
+    {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetTeam?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&teamName="+teamId, true);
+xhttp.send();
+
+function myFunction(xml)
+{
+    var i, teamTxt, team, xmlDoc, stadium, stdTxt, country, couTxt;
+    xmlDoc = xml.responseXML;
+    teamTxt = "";
+    stdTxt = "";
+    couTxt + "";
+    team = xmlDoc.getElementsByTagName("Name");
+    stadium = xmlDoc.getElementsByTagName("Stadium");
+    country = xmlDoc.getElementsByTagName("Country");
+
+
+        for (i = 0; i < team.length; i++) 
+            { 
+                teamTxt=team[i].childNodes[0].nodeValue;
+                
+                stdTxt=stadium[i].childNodes[0].nodeValue;
+                
+                couTxt=country[i].childNodes[0].nodeValue;
+            }
+    
+    
+            document.getElementById("teamName").innerHTML = teamTxt;
+            document.getElementById("stadium").innerHTML = stdTxt;
+            document.getElementById("country").innerHTML = couTxt;
+
+
+} 
+
+var xhttp2;
+xhttp2 = new XMLHttpRequest();
+xhttp2.onreadystatechange = function()
+{
+    if (xhttp2.readyState == 4 && xhttp2.status == 200) 
+    {
+        myFunction2(xhttp2);
+    }
+};
+    xhttp2.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetPlayersByTeam?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&teamId="+teamId, true);
+    xhttp2.send();
+
+function myFunction2(xml)
+    {
+        
+    heights=[];
+    var txt, xmlDoc, pName, height, num, player, plyId; 
+    xmlDoc = xml.responseXML;
+    names = "";
+    xmlDoc = xml.responseXML;
+    pName = xmlDoc.getElementsByTagName("Name");
+    height = xmlDoc.getElementsByTagName("Height");
+    num = xmlDoc.getElementsByTagName("PlayerNumber");  
+    player = xmlDoc.getElementsByTagName("Player"); 
+    plyId = xmlDoc.getElementsByTagName("Id");
+    
+        
+    for (i = 0; i < pName.length; i++) 
+    {          
+//        names +=pName[i].childNodes[0].nodeValue +" "+ num[i].childNodes[0].nodeValue +"<br>";
+          names +=
+                "<p onclick=getPlayerData("+plyId[i].childNodes[0].nodeValue+")>"
+                + '<a href="playerinfo.html">'
+                + pName[i].childNodes[0].nodeValue
+                + "</p>";
+//        height[i]=height[i].childNodes[0].nodeValue;
+        
+    }
+    document.getElementById("players").innerHTML = names;
+}    
+    
+function getPlayerData(plyId)
+    {
+        var playId = plyId;
+        localStorage.setItem("playerID",playId);
+    }
+
+function getDate()
+    {
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+var hour = today.getHours();
+var min = today.getMinutes();
+var secs = today.getSeconds();        
+
+if(dd<10)
+{
+    dd='0'+dd
+} 
+
+if(mm<10)
+{
+    mm='0'+mm
+} 
+
+today = yyyy+'-'+dd+'-'+mm+'T'+hour+':'+min+':'+secs;
+        
+        alert(today);
+    }
+    
+</script>        
+</html>

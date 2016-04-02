@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Footie Stats Prototype</title>
+<link href="styles/global.css" rel="stylesheet" type="text/css">
+<script src="scripts/custom.js"></script>
+</head>
+
+<body>
+	<a name="top"></a>
+	<div class="header">
+		<div class="head-img">
+			<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
+		<!-- end .head-img --></div> 
+      
+		<div class="head-text">
+        	<p>Scottish Premier League by Footie Stats</p>
+        <!-- end .head-text --></div>
+	<!-- end .header --></div>
+    <div class="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
+		</ul> 
+        <!-- end .nav --></div>
+    
+<div class="container">
+  <div class="content">
+   	<div class="scorebar"> <div class="teamOne"><h1>Celtic</h1></div> <div class="score">VS</div> <div class="teamTwo"><h1>Inverness CT</h1></div> </div>
+    <p>This will include graphics dynamically created, for the purposes right now, static informtion is used for demo purposes</p>
+    <div id="mshots">Shots<br/><img src="images/chart example.jpg" width="350" height="400"></div>
+    <div id="mpassing">Passing<br/><img src="images/chart example two.jpg" width="350" height="400"></div>
+    <div id="mtackles">Tackling<br/><img src="images/chart example three.jpg" width="350" height="400"></div>
+    <div id="minfo">Match Info<br/><img src="images/lineup.jpg" width="350" height="400"></div>
+    <div id="mdisplay">
+    	<button type="button" onclick="hideShot()">Hide Shots</button>
+        <button type="button" onclick="hidePassing()">Hide Passing</button>
+        <button type="button" onclick="hideTackling()">Hide Tackling</button>
+        <button type="button" onclick="hideInfo()">Hide Info</button>
+        <br/>
+        <button type="button" onclick="showShot()">Show Shots</button>
+        <button type="button" onclick="showPassing()">Show Passing</button>
+        <button type="button" onclick="showTackling()">Show Tackling</button>
+		<button type="button" onclick="showInfo()">Show Info</button>
+    </div>
+    
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+	<div class="footer">
+		<div class="top">
+			<a href='#top'>Back to Top</a>
+		<!-- end .top --></div>
+    <p>Footie Stats and HMM logos are property of their respective owners</p>
+    <a href="hmm.html">Site created by HMM Media</a>
+    <!-- end .footer --></div>
+</body>
+</html>

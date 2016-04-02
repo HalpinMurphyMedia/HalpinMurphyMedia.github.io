@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Footie Stats Prototype</title>
+<link href="styles/global.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<a name="top"></a>
+	<div class="header">
+		<div class="head-img">
+			<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
+		<!-- end .head-img --></div> 
+      
+		<div class="head-text">
+        	<p>Scottish Premier League by Footie Stats</p>
+        <!-- end .head-text --></div>
+	<!-- end .header --></div>
+    <div class="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
+		</ul> 
+        <!-- end .nav --></div>
+    
+<div class="container">
+  <div class="content">
+<!--
+   	<p>Content for site in here</p>
+    <p>This will include tables and graphics</p>
+-->
+    <table id="topScorer" width="80%" border="2" cellspacing="0" cellpadding="0">
+  <tr>
+    <th scope="col">Pos</th>
+    <th scope="col">Player</th>
+    <th scope="col">Team</th>
+    <th scope="col">Goals</th>
+  </tr>
+  
+</table>
+
+    
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+	<div class="footer">
+		<div class="top">
+			<a href='#top'>Back to Top</a>
+		<!-- end .top --></div>
+    <p>Footie Stats and HMM logos are property of their respective owners</p>
+    <a href="hmm.html">Site created by HMM Media</a>
+    <!-- end .footer --></div>
+</body>
+    
+<script>
+var xhttp;
+
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200)
+    {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetTopScorersByLeagueAndSeason?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&league=ScottishPremierLeague&seasonDateString=1516", true);
+xhttp.send();
+
+function myFunction(xml)
+    {
+    var name, rank, i, txt, xmlDoc; 
+    xmlDoc = xml.responseXML;
+    txt = "";
+    goals = xmlDoc.getElementsByTagName("Goals");
+    name = xmlDoc.getElementsByTagName("Name");
+    team = xmlDoc.getElementsByTagName("TeamName");
+
+    for (i = 0; i < name.length; i++)
+    { 
+        
+        pos=i+1;
+        txt +="<tr>" 
+       
+            + "<td>" 
+            + pos
+            + "</td>"
+       
+            + "<td>" 
+            + name[i].childNodes[0].nodeValue 
+            + "</td>"
+        
+            + "<td>" 
+            + team[i].childNodes[0].nodeValue 
+            + "</td>"
+            
+        
+            + "<td>" 
+            + goals[i].childNodes[0].nodeValue 
+            + "</td>"
+           
+            + "</tr>";
+
+
+
+    }
+    document.getElementById("topScorer").innerHTML += txt;
+}
+</script>    
+    
+</html>

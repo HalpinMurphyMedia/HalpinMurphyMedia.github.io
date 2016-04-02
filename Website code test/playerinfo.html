@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Footie Stats Prototype</title>
+<link href="styles/global.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<a name="top"></a>
+	<div class="header">
+		<div class="head-img">
+			<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
+		<!-- end .head-img --></div> 
+      
+		<div class="head-text">
+        	<p>Scottish Premier League by Footie Stats</p>
+        <!-- end .head-text --></div>
+	<!-- end .header --></div>
+    <div class="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
+		</ul> 
+        <!-- end .nav --></div>
+    
+<div class="container">
+    <div class="mteams"> 
+        <h1 id="playerName">Blank</h1>
+        <h3 id="team">Blank</h3>
+        <h4 id="country">Blank</h4>
+        <h4>Info</h4>
+        <p id="info">
+        </p>
+    </div>
+  <div class="content">
+   	
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+	<div class="footer">
+		<div class="top">
+			<a href='#top'>Back to Top</a>
+		<!-- end .top --></div>
+    <p>Footie Stats and HMM logos are property of their respective owners</p>
+    <a href="hmm.html">Site created by HMM Media</a>
+    <!-- end .footer --></div>
+</body>
+<script>
+var playerId=localStorage.getItem("playerID");    
+
+    
+var xhttp;
+xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function()
+{
+    if (xhttp.readyState == 4 && xhttp.status == 200) 
+    {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetPlayerById?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&playerId="+playerId, true);
+xhttp.send();
+
+function myFunction(xml)
+{
+    var i, teamTxt, playerName, xmlDoc,country,playerTxt, countryTxt,team, infoTxt,pos,birth,cost;
+    xmlDoc = xml.responseXML;
+    teamTxt = "";
+    playerTxt = "";
+    countryTxt = "";
+    infoTxt="";
+
+    playerName = xmlDoc.getElementsByTagName("Name");
+    country = xmlDoc.getElementsByTagName("Nationality");
+    pos = xmlDoc.getElementsByTagName("Position"); 
+    birth = xmlDoc.getElementsByTagName("DateOfBirth");
+    cost = xmlDoc.getElementsByTagName("Signing"); 
+    
+
+
+        for (i = 0; i < playerName.length; i++) 
+            { 
+                playerTxt=playerName[i].childNodes[0].nodeValue;
+                countryTxt=country[i].childNodes[0].nodeValue;
+                infoTxt=
+                        "Position:" + " " + pos[i].childNodes[0].nodeValue
+                        +"<br>"
+                        + "DOB:" + " " + birth[i].childNodes[0].nodeValue
+                        +"<br>"
+                        +"Cost:" + " " + cost[i].childNodes[0].nodeValue;
+            }
+    
+            document.getElementById("playerName").innerHTML = playerTxt;
+            document.getElementById("country").innerHTML = countryTxt;
+            document.getElementById("info").innerHTML = infoTxt;
+
+
+} 
+       
+
+</script>        
+</html>
