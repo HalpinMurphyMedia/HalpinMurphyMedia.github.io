@@ -36,3 +36,15 @@ function showInfo() {
     document.getElementById("minfo").style.visibility = "visible"; 
 }
 
+
+// _________________________________________________________________________________________________________________________________________________
+// Page Reloading
+
+// Calls a function to reload the page every 60 seconds. This reloads the entire page
+ $(document).ready(function(){
+ setInterval(function(){cache_clear()},60000);
+ });
+ function cache_clear()
+{
+ window.location.reload(true);
+}
