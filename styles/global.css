@@ -154,31 +154,31 @@ td {
 	height:100%;
 }
 
-#mshots {
+.mshots {
 	display:block;
 	width:50%;
 	float:left;
 }
 
-#mpassing {
+.mpassing {
 	display:block;
 	width:50%;
 	float:left;
 }
 
-#mtackles {
+.mtackles {
 	display:block;
 	width:50%;
 	float:left;
 }
 
-#minfo {
+.minfo {
 	display:block;
 	width:50%;
 	float:left;
 }
 
-#mdisplay {
+.mdisplay {
 	clear:both;
 	margin-top:20px;
 	padding-top:20px;
@@ -206,3 +206,123 @@ td {
 
 /* -- For HighCharts -- */
 ${demo.css}
+
+/* -- For Media Queries (Mobile responsive -- */
+@media screen and (min-width: 480px) {
+    body {
+        font-size:1.3em;
+    }
+	
+	.container {
+	clear:both;
+	width: 100%;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	width:100%;
+	height:auto;
+}
+
+.scorebar h1 {
+	font-size: 0.7em;
+}
+
+.head-text {
+	font-size: 0.7EM;
+}
+	.footer { 
+	width:100%;
+	}
+		
+.mshots {
+	display:block;
+	width:100%;
+	float:left;
+}
+
+.mpassing {
+	display:block;
+	width:100%;
+	float:left;
+}
+
+.mtackles {
+	display:block;
+	width:100%;
+	float:left;
+}
+
+.minfo {
+	display:block;
+	width:100%;
+	float:left;
+}
+
+.mdisplay {
+	clear:both;
+	margin-top:10px;
+	padding-top:10px;
+}
+
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        font-size:1.3em;
+    }
+	
+	.container {
+	clear:both;
+	width: 80%;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	width:100%;
+	height:auto;
+}
+
+.head-text {
+	font-size: 1.1EM;
+}
+
+.scorebar h1 {
+	font-size: 1.1em;
+}
+
+.mshots {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+.mpassing {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+.mtackles {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+.minfo {
+	display:block;
+	width:50%;
+	float:left;
+}
+
+.mdisplay {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+}
+	.footer { 
+	width:100%;
+	}
+}
