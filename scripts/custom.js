@@ -40,7 +40,8 @@ function showInfo() {
 // _________________________________________________________________________________________________________________________________________________
 // Page Reloading
 
-// Calls a function to reload the page every 60 seconds. This reloads the entire page
+// Calls a function to reload the page every 60 seconds based on a timer and clears all existing data on the page. This reloads the entire page
+// This will only be enabled on pages that contain data that may change.
  $(document).ready(function(){
  setInterval(function(){cache_clear()},60000);
  });
