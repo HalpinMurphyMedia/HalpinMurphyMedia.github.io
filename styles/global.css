@@ -213,7 +213,7 @@ ${demo.css}
         font-size:1.3em;
     }
 	
-	.container {
+.container {
 	clear:both;
 	width: 100%;
 	background-color: #9DA9A0;
@@ -234,7 +234,9 @@ ${demo.css}
 }
 	.footer { 
 	width:100%;
+	font-size: 0.7em;
 	}
+}
 		
 .mshots {
 	display:block;
