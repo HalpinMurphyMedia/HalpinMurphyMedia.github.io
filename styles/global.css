@@ -232,11 +232,11 @@ ${demo.css}
 .head-text {
 	font-size: 0.7EM;
 }
-	.footer { 
+
+.footer { 
 	width:100%;
 	font-size: 0.7em;
 	}
-}
 		
 .mshots {
 	display:block;
@@ -268,11 +268,15 @@ ${demo.css}
 	padding-top:10px;
 }
 
+	.footer { 
+	width:100%;
+	font-size:1.3em;
+	}
 }
 
 @media screen and (min-width: 1280px) {
     body {
-        font-size:1.3em;
+        font-size:1.1em;
     }
 	
 	.container {
@@ -326,5 +330,6 @@ ${demo.css}
 }
 	.footer { 
 	width:100%;
+	font-size:1.1em;
 	}
 }
