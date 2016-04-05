@@ -209,9 +209,9 @@ ${demo.css}
 
 /* -- For Media Queries (Mobile responsive -- */
 @media screen and (min-width: 480px) {
-    body {
+body {
         font-size:1.3em;
-    }
+}
 	
 .container {
 	clear:both;
@@ -232,11 +232,6 @@ ${demo.css}
 .head-text {
 	font-size: 0.7EM;
 }
-
-.footer { 
-	width:100%;
-	font-size: 0.7em;
-	}
 		
 .mshots {
 	display:block;
@@ -268,18 +263,18 @@ ${demo.css}
 	padding-top:10px;
 }
 
-	.footer { 
+.footer { 
 	width:100%;
 	font-size:1.3em;
-	}
+}
 }
 
 @media screen and (min-width: 1280px) {
-    body {
+body {
         font-size:1.1em;
-    }
+}
 	
-	.container {
+.container {
 	clear:both;
 	width: 80%;
 	background-color: #9DA9A0;
@@ -293,6 +288,10 @@ ${demo.css}
 
 .head-text {
 	font-size: 1.1EM;
+}
+
+th {
+	font-size:1.3em;
 }
 
 .scorebar h1 {
@@ -328,8 +327,9 @@ ${demo.css}
 	margin-top:20px;
 	padding-top:20px;
 }
-	.footer { 
+
+.footer { 
 	width:100%;
 	font-size:1.1em;
-	}
+}
 }
