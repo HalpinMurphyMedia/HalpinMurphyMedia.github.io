@@ -1,6 +1,6 @@
 // JavaScript Document
  
-var number=10; 
+var number=1; 
  
 $(function () {
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -10,7 +10,7 @@ $(function () {
             type: 'bar'
         },
         title: {
-            text: 'Shots on Target'
+            text: 'Goals'
         },
         xAxis: {
             categories: ['Team 1', 'Team 2'],
@@ -50,7 +50,7 @@ $(function () {
             enabled: false
         },
         series: [{
-            name: '',
+            name: 'Goals',
             data: [number, 9]
         }]
     });

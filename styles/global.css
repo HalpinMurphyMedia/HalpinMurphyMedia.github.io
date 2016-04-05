@@ -96,8 +96,6 @@ a img {
 .leaguetable {
 	width:80%;
 	border-right:1px;
-	cellspacing:0; 
-	cellpadding:0;
 }
 
 th {
@@ -232,6 +230,28 @@ body {
 .head-text {
 	font-size: 0.7EM;
 }
+
+table {
+	width:100%;
+	min width:500px;
+}
+
+.leaguetable {
+	width:100%;
+	border-right:1px;
+}
+
+th {
+	font-size:1.1em;
+}
+
+td {
+	font-size:1.1em;
+}
+
+tr {
+	font-size:1.1em;
+}
 		
 .mshots {
 	display:block;
@@ -255,6 +275,43 @@ body {
 	display:block;
 	width:100%;
 	float:left;
+}
+
+.field {
+	background-image:url(../images/field.jpg);
+	background-color: #063;
+}
+
+.awayG {
+	height:12.5%;
+}
+
+.awayD {
+	height:12.5%;
+}
+
+.awayM {
+	height:12.5%;
+}
+
+.awayF {
+	height:12.5%;
+}
+
+.homeG {
+	height:12.5%;
+}
+
+.homeD {
+	height:12.5%;
+}
+
+.homeM {
+	height:12.5%;
+}
+
+.homeF {
+	height:12.5%;
 }
 
 .mdisplay {
@@ -290,8 +347,21 @@ body {
 	font-size: 1.1EM;
 }
 
+.leaguetable {
+	width:80%;
+	border-right:1px;
+}
+
 th {
-	font-size:1.3em;
+	font-size:1.1em;
+}
+
+td {
+	font-size:1.1em;
+}
+
+tr {
+	font-size:1.1em;
 }
 
 .scorebar h1 {
