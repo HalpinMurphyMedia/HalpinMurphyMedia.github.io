@@ -6,7 +6,7 @@
             <link href="styles/global.css" rel="stylesheet" type="text/css">
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script src="scripts/custom.js"></script>
-            <script src="scripts/my_highcharts.js"></script> <!-- MyCustom HighCharts file -->
+            <script src="scripts/game_script.js"></script> <!-- MyCustom HighCharts file -->
       	<!-- General HighCharts Files -->
             <script src="https://code.highcharts.com/highcharts.js"></script>
     		<script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -24,6 +24,8 @@
     </head>
 
 <body>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     
 	<a name="top"></a>
 	<div class="header">
@@ -37,34 +39,39 @@
 	<!-- end .header --></div>
     <div class="nav">
 		<ul>
-			<li><a href="index.html"><p>Games</p></a></li>
-			<li><a href="table.html"><p>League Table</p></a></li>
-			<li><a href="player.html"><p>Top Scorers</p></a></li>
-			<li><a href="info.html"><p>Info</p></a></li>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
 		</ul> 
         <!-- end .nav --></div>
     
 <div class="container">
   <div class="content">
-   	<div class="scorebar"> <div class="teamOne"><h1>Celtic</h1></div> <div class="score">VS</div> <div class="teamTwo"><h1>Inverness CT</h1></div> </div>
-    <p>This will include graphics dynamically created, for the purposes right now, static informtion is used for demo purposes</p>
-    <div class="mshots">
-        Shots
+   	<div class="scorebar"> <div class="teamOne"><h1 id="t1">Blank</h1></div> <div id="score" class="score">VS</div> <div class="teamTwo"><h1 id="t2">Blank</h1></div> </div>
+<!--    <p>This will include graphics dynamically created, for the purposes right now, static informtion is used for demo purposes</p>-->
+    
+      <div id="mshots">
         <br/>
         <div id="container" style="margin: 0 auto"></div>
         <div id="container2" style="margin: 0 auto"></div>
+<!--
         <div id="container3" style="margin: 0 auto"></div>
         <div id="container4" style="margin: 0 auto"></div>
+-->
     </div>
-    <div class="mpassing">
-        Passing
+      
+    <div id="mpassing">
         <br/>
         <div id="container5" style="margin: 0 auto"></div>
         <div id="container6" style="margin: 0 auto"></div>
+<!--
         <div id="container7" style="margin: 0 auto"></div>
         <div id="container8" style="margin: 0 auto"></div>
+-->
     </div>
-    <div class="mtackles">
+<!--
+    <div id="mtackles">
         Tackling
         <br/>
         <div id="container9" style="margin: 0 auto"></div>
@@ -72,35 +79,28 @@
         <div id="container11" style="margin: 0 auto"></div>
         <div id="container12" style="margin: 0 auto"></div>
     </div>
-    <div class="minfo">Match Info<br/>
-    	<div class="field.jpg">
-        	<div class="awayG">Away K</div>
-            <div class="awayD">Away D, Away D, Away D, Away D</div>
-            <div class="awayM">Away M, Away M, Away M, Away M</div>
-            <div class="awayF">Away F, Away F</div>
-            <div class="homeF">Home F, Home F</div>
-            <div class="homeM">Home M, Home M, Home M, Home M</div>
-            <div class="homeD">Home D, Home D, Home D, Home D</div>
-            <div class="homeG">Home G</div>
-        </div> <!-- End Field -->
-    </div><!-- End Match Info -->
-    <div class="mdisplay">
+    <div id="minfo">Match Info<br/><img src="images/lineup.jpg" width="350" height="400"></div>
+-->
+<p id="details">
+      
+</p>      
+    <div id="mdisplay">
     	<button type="button" onclick="hideShot()">Hide Shots</button>
         <button type="button" onclick="hidePassing()">Hide Passing</button>
         <button type="button" onclick="hideTackling()">Hide Tackling</button>
-        <button type="button" onclick="hideInfo()">Hide Match Info</button>
+        <button type="button" onclick="hideInfo()">Hide Info</button>
         <br/>
         <button type="button" onclick="showShot()">Show Shots</button>
         <button type="button" onclick="showPassing()">Show Passing</button>
         <button type="button" onclick="showTackling()">Show Tackling</button>
-		<button type="button" onclick="showInfo()">Show Match Info</button>
+		<button type="button" onclick="showInfo()">Show Info</button>
     </div>
     
     <!-- end .content --></div>
   <!-- end .container --></div>
 	<div class="footer">
 		<div class="top">
-			<a href='#top'>&uarr; Top</a>
+			<a href='#top'>Back to Top</a>
 		<!-- end .top --></div>
     <p>Footie Stats and HMM logos are property of their respective owners</p>
     <a href="hmm.html">Site created by HMM Media</a>

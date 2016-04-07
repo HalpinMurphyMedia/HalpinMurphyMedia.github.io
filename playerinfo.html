@@ -6,6 +6,7 @@
             <link href="styles/global.css" rel="stylesheet" type="text/css">
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script src="scripts/custom.js"></script>
+            <script src="scripts/player_info_script.js"></script>
             <script src="scripts/my_highcharts.js"></script> <!-- MyCustom HighCharts file -->
       	<!-- General HighCharts Files -->
             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -48,16 +49,14 @@
     
 <div class="container">
   <div class="content">
-   	<div class="playname"><h1>Player Name</h1></div>
-    	<p>Player Stats here</p>
-    		<div class="playerstats">Name</div>
-            <div class="playerstats">Position</div>
-            <div class="playerstats">Team</div>
-            <div class="playerstats">Age</div>
-            <div class="playerstats">Club Apps (season)</div>
-            <div class="playerstats">Goals (season)</div>
-            <div class="playerstats">Transfer Cost
-            </div>
+    <div class="mteams"> 
+        <h1 id="playerName">Blank</h1>
+        <h3 id="team">Blank</h3>
+        <h4 id="country">Blank</h4>
+        <h4>Info</h4>
+        <p id="info">
+        </p>
+    </div>
     
     
 

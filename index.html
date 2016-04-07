@@ -6,6 +6,7 @@
             <link href="styles/global.css" rel="stylesheet" type="text/css">
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script src="scripts/custom.js"></script>
+            <script src="scripts/index_script.js"></script>
             <script src="scripts/my_highcharts.js"></script> <!-- MyCustom HighCharts file -->
       	<!-- General HighCharts Files -->
             <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -45,59 +46,19 @@
     
 <div class="container">
   <div class="content">
-   	<p>Content for site in here</p>
-    <p>This will include tables and graphics</p>
-    <table border="2" >
+   	
+<input id="inputDate" type="date" name="start">
+<button type="button" onclick="changeDate()">Go</button><br>
+
+
+      <p id='live'>Live Matches</p>  
+   	<p id='past'>Past Matches</p>
+      <table id="tableLive">
   <tr>
-    <td>Today</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    
   </tr>
-  <tr>
-    <td><a href="team.html">Celtic</a></td>
-    <td><a href="game.html">score</a></td>
-    <td>Inverness CT</td>
-  </tr>
-  <tr>
-    <td>Team 3</td>
-    <td>vs</td>
-    <td>Team 4</td>
-  </tr>
-  <tr>
-    <td>Date</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Team 5</td>
-    <td>vs</td>
-    <td>Team 7</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+</table>  
+    <table id="table">
 </table>
 
     

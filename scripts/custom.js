@@ -43,10 +43,10 @@ function showInfo() {
 // Calls a function to reload the page every 30 seconds based on a timer and clears all existing data on the page. This reloads the entire page
 // This will only be enabled on pages that contain data that may change.
 // This causes the full page to reload. Ideally we want to be able to reload only the variable data.
- $(document).ready(function(){
- setInterval(function(){cache_clear()},30000);
- });
- function cache_clear()
-{
- window.location.reload(true);
-}
+// $(document).ready(function(){
+// setInterval(function(){cache_clear()},30000);
+// });
+ //function cache_clear()
+//{
+// window.location.reload(true);
+//}

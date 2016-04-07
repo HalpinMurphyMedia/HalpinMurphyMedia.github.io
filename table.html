@@ -6,13 +6,14 @@
             <link href="styles/global.css" rel="stylesheet" type="text/css">
             <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script src="scripts/custom.js"></script>
+            <script src="scripts/league_table_script.js"></script>
             <script src="scripts/my_highcharts.js"></script> <!-- MyCustom HighCharts file -->
       	<!-- General HighCharts Files -->
             <script src="https://code.highcharts.com/highcharts.js"></script>
     		<script src="https://code.highcharts.com/modules/exporting.js"></script>
         <!-- End of General HighCharts Files -->
     	<!-- Start Analytics -->
-            <script>
+        <!--    <script>
 				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -20,6 +21,7 @@
 				ga('create', 'UA-75907608-1', 'auto');
 				ga('send', 'pageview');
 			</script>
+        -->
 		<!-- End Analytics -->
     </head>
 
@@ -47,7 +49,8 @@
   <div class="content">
    	<p>Content for site in here</p>
     <p>This will include tables and graphics</p>
-    <table class="leaguetable">
+<!--   	<p id="text">Content for site in here</p>-->
+    <table id="leagueTable">
   <tr>
     <th scope="col">Position</th>
     <th scope="col">Team</th>
@@ -60,152 +63,8 @@
     <th scope="col">Goal Difference</th>
     <th scope="col">Points</th>
   </tr>
-  <tr class="shade_one">
-    <th scope="row">1</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">2</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_one">
-    <th scope="row">3</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">4</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_one">
-    <th scope="row">5</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">6</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_one">
-    <th scope="row">7</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">8</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_one">
-    <th scope="row">9</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">10</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_one">
-    <th scope="row">11</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
-  <tr class="shade_two">
-    <th scope="row">12</th>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class="points">Point</td>
-  </tr>
+  
 </table>
-
     <!-- end .content --></div>
   <!-- end .container --></div>
 	<div class="footer">

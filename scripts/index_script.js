@@ -1,57 +1,56 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Footie Stats Prototype</title>
-<link href="styles/global.css" rel="stylesheet" type="text/css">
-</head>
+// Index script
 
-<body>
-	<a name="top"></a>
-	<div class="header">
-		<div class="head-img">
-        	<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
-		<!-- end .head-img --></div> 
-      
-		<div class="head-text">
-        	<p>Scottish Premier League by Footie Stats</p>
-        <!-- end .head-text --></div>
-	<!-- end .header --></div>
-    <div class="nav">
-		<ul>
-			<li><a href="index.html">Games</a></li>
-			<li><a href="table.html">League Table</a></li>
-			<li><a href="player.html">Top Scorers</a></li>
-			<li><a href="info.html">Info</a></li>
-		</ul> 
-        <!-- end .nav --></div>
+  //gets current date in format to be used as well as date minus 1 month to be used
+    //shows all games from previous month
+    var today = new Date();
+    var startDate = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();  
     
-<div class="container">
-  <div class="content">
-    <p id='live'>Live Matches</p>  
-   	<p id='past'>Past Matches</p>
-      <table id="tableLive" width="80%" border="2" cellspacing="0" cellpadding="0">
-  <tr>
-    
-  </tr>
-</table>  
-    <table id="table" width="80%" border="2" cellspacing="0" cellpadding="0">
-</table>
+    var SDdd = startDate.getDate();
+    var SDmm = startDate.getMonth();
+    var SDyyyy = startDate.getFullYear();
 
-    
-    <!-- end .content --></div>
-  <!-- end .container --></div>
-	<div class="footer">
-		<div class="top">
-			<a href='#top'>&uarr; Top</a>
-		<!-- end .top --></div>
-    <p>Footie Stats and HMM logos are property of their respective owners</p>
-    <a href="hmm.html">Site created by HMM Media</a>
-    <!-- end .footer --></div>
-</body>
-<script>
-    
+    //ensures date stays in format 
+    if(dd<10)
+    {
+        dd='0'+dd;
+    } 
 
+    if(mm<10)
+    {
+        mm='0'+mm;
+    } 
+    
+     if(SDdd<10)
+    {
+        SDdd='0'+SDdd;
+    } 
+
+    if(SDmm<10)
+    {
+        SDmm='0'+SDmm;
+    } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    startDate = SDyyyy+'-'+SDmm+'-'+SDdd;
+    
+    //convert to string to be used and call the get games function
+    today.toString();
+    startDate.toString();
+    getGames();
+
+//called when user wants to see games from previous dates
+  function changeDate()
+    {
+        var newDate = document.getElementById("inputDate").value;
+        newDate.toString();
+        startDate=newDate;
+        getGames();
+    }    
+    
+//set up and call games if they are currently being played    
 var matchDetails=[];
 var xhttp;
 xhttp = new XMLHttpRequest();
@@ -62,7 +61,10 @@ xhttp.onreadystatechange = function()
         myFunction(xhttp);
     }
 };
+    
 xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetLiveScoreByLeague?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&league=ScottishPremierLeague", true);
+    
+    
 xhttp.send();
 
 function myFunction(xml)
@@ -72,6 +74,7 @@ function myFunction(xml)
     txt = "";
     if( xmlDoc.getElementsByTagName("XMLSOCCER.COM").length < 2 )
         {
+            //no live games currently on. display this message
             document.getElementById("live").innerHTML = "No matches are currently being played";
         }
     else
@@ -95,31 +98,48 @@ function myFunction(xml)
             + "<td>" 
             + aTeam[i].childNodes[0].nodeValue 
             + "</tr>";
-
-
-
         }
         document.getElementById("tableLive").innerHTML = txt;
     }
 }
 
-var xhttp2;
-xhttp2 = new XMLHttpRequest();
-xhttp2.onreadystatechange = function()
-{
-    if (xhttp2.readyState == 4 && xhttp2.status == 200) 
-    {
-        myFunction2(xhttp2);
-    }
-};
-xhttp2.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetFixturesByLeagueAndSeason?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&seasonDateString=1516&league=ScottishPremierLeauge", true);
-xhttp2.send();
+
+//var xhttp2;
+//xhttp2 = new XMLHttpRequest();
+//xhttp2.onreadystatechange = function()
+//{
+//    if (xhttp2.readyState == 4 && xhttp2.status == 200) 
+//    {
+//        myFunction2(xhttp2);
+//    }
+//};
+    
+//xhttp2.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetFixturesByLeagueAndSeason?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&seasonDateString=1516&league=ScottishPremierLeauge", true);
+
+//retrive and show results from previous games
+function getGames()
+    {    
+        var xhttp2;
+        xhttp2 = new XMLHttpRequest();
+        xhttp2.onreadystatechange = function()
+        {
+            if (xhttp2.readyState == 4 && xhttp2.status == 200) 
+            {
+            myFunction2(xhttp2);
+            }
+        };        
+        
+        xhttp2.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetFixturesByDateIntervalAndLeague?league=ScottishPremierLeague&ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&startDateString="+startDate+"&endDateString="+today, true);
+        
+        xhttp2.send();
+}
 
 function myFunction2(xml)
     {
-    var home, away, hTeam, aTeam, i, txt, xmlDoc, matchId, homeId, awayId; 
+    var home, away, hTeam, aTeam, i, txt, xmlDoc, matchId, homeId, awayId, dateText; 
     xmlDoc = xml.responseXML;
     txt = "";
+    dateText=startDate;
     home = xmlDoc.getElementsByTagName("HomeGoals");
     away = xmlDoc.getElementsByTagName("AwayGoals");
     hTeam = xmlDoc.getElementsByTagName("HomeTeam");
@@ -130,10 +150,11 @@ function myFunction2(xml)
     homeId = xmlDoc.getElementsByTagName("HomeTeam_Id");
     awayId = xmlDoc.getElementsByTagName("AwayTeam_Id");
 
-        
+    //loop trough list of every game and display relevant data    
     for (i = 0; i < home.length; i++) 
     {          
-        txt +="<tr>" 
+        txt +=
+            "<tr>" 
             + "<td onclick=getTeamData("+homeId[i].childNodes[0].nodeValue+")>" 
             + '<a href="teamInfo.html">'
             + hTeam[i].childNodes[0].nodeValue 
@@ -155,7 +176,9 @@ function myFunction2(xml)
 
     }
     document.getElementById("table").innerHTML = txt;
+    document.getElementById("past").innerHTML = "Games since" + " " + startDate;
 }        
+
 
 //send match id from clicked item to thsi function which then saves it in local storage and can then be loaded by the next page
 function getMatchData(matchId)
@@ -164,12 +187,9 @@ function getMatchData(matchId)
     localStorage.setItem("matchID",matchId);
 }
 
+//store team id in local stroage, used when user selects a team, this can then be loaded by the next page    
 function getTeamData(teamId)
 {        
     var tId = teamId;
     localStorage.setItem("teamID",teamId);
-//    alert(teamId);
 }    
-    
-</script>
-</html>
