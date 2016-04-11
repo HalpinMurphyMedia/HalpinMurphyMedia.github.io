@@ -191,28 +191,39 @@ table a {
 	height:100%;
 }
 
-.mshots {
+#mshots {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.mpassing {
+#mpassing {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.mtackles {
+#mtackles {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.minfo {
+#minfo {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
+}
+
+#details {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
 }
 
 .field {
@@ -292,10 +303,18 @@ table a {
 
 
 
-.mdisplay {
+#mdisplay {
 	clear:both;
 	margin-top:20px;
 	padding-top:20px;
+	margin-top:10px;
+}
+
+#details {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+	margin-top:10px;
 }
 
 /* ~~ The footer ~~ */
@@ -369,34 +388,46 @@ tr {
 	font-size:1.1em;
 }
 		
-.mshots {
+#mshots {
 	display:block;
 	width:100%;
 	float:left;
+	margin-top:10px;
 }
 
-.mpassing {
+#mpassing {
 	display:block;
 	width:100%;
 	float:left;
+	margin-top:10px;
 }
 
-.mtackles {
+#mtackles {
 	display:block;
 	width:100%;
 	float:left;
+	margin-top:10px;
 }
 
-.minfo {
+#minfo {
 	display:block;
 	width:100%;
 	float:left;
+	margin-top:10px;
 }
 
-.mdisplay {
+#mdisplay {
 	clear:both;
 	margin-top:10px;
 	padding-top:10px;
+	margin-top:10px;
+}
+
+#details {
+	clear:both;
+	margin-top:10px;
+	padding-top:10px;
+	margin-top:10px;
 }
 
 .footer { 
@@ -447,34 +478,39 @@ tr {
 	font-size: 1.1em;
 }
 
-.mshots {
+#mshots {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.mpassing {
+#mpassing {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.mtackles {
+#mtackles {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.minfo {
+#minfo {
 	display:block;
 	width:50%;
 	float:left;
+	margin-top:10px;
 }
 
-.mdisplay {
+#mdisplay {
 	clear:both;
 	margin-top:20px;
 	padding-top:20px;
+	margin-top:10px;
 }
 
 .footer { 
