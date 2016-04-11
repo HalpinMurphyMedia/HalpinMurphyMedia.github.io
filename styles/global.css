@@ -205,13 +205,6 @@ table a {
 	margin-top:10px;
 }
 
-#mtackles {
-	display:block;
-	width:50%;
-	float:left;
-	margin-top:10px;
-}
-
 #minfo {
 	display:block;
 	width:50%;
@@ -403,13 +396,6 @@ tr {
 	margin-top:10px;
 }
 
-#mtackles {
-	display:block;
-	width:100%;
-	float:left;
-	margin-top:10px;
-}
-
 #minfo {
 	display:block;
 	width:100%;
@@ -488,13 +474,6 @@ tr {
 }
 
 #mpassing {
-	display:block;
-	width:50%;
-	float:left;
-	margin-top:10px;
-}
-
-#mtackles {
 	display:block;
 	width:50%;
 	float:left;
