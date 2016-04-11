@@ -215,6 +215,83 @@ table a {
 	float:left;
 }
 
+.field {
+	background-image:url(../images/field.jpg);
+	background-color: #063;
+	width:500px;
+	height:auto;
+	background-repeat:no-repeat;
+	
+}
+
+.awayG {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+	font-weight:400;
+	color:#CCC;
+}
+
+.awayD {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.awayM {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.awayF {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeG {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeD {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeM {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeF {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+
+
 .mdisplay {
 	clear:both;
 	margin-top:20px;
@@ -314,43 +391,6 @@ tr {
 	display:block;
 	width:100%;
 	float:left;
-}
-
-.field {
-	background-image:url(../images/field.jpg);
-	background-color: #063;
-}
-
-.awayG {
-	height:12.5%;
-}
-
-.awayD {
-	height:12.5%;
-}
-
-.awayM {
-	height:12.5%;
-}
-
-.awayF {
-	height:12.5%;
-}
-
-.homeG {
-	height:12.5%;
-}
-
-.homeD {
-	height:12.5%;
-}
-
-.homeM {
-	height:12.5%;
-}
-
-.homeF {
-	height:12.5%;
 }
 
 .mdisplay {
