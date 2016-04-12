@@ -1,8 +1,15 @@
 // Player Info Script
 
 var playerId=localStorage.getItem("playerID");    
+var ages=[];
 
-    
+//get year to find players age
+var today = new Date();
+
+var yyyy = today.getFullYear();  
+
+//today.toString();
+
 var xhttp;
 xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function()
@@ -12,6 +19,7 @@ xhttp.onreadystatechange = function()
         myFunction(xhttp);
     }
 };
+
 xhttp.open("GET", "http://www.xmlsoccer.com/FootballDataDemo.asmx/GetPlayerById?ApiKey=TCDZLARAPAZJDMAFURGRYNXUTNMYSXEPDAEEUQWVVXRBVTVKOS&playerId="+playerId, true);
 xhttp.send();
 
@@ -39,25 +47,36 @@ function myFunction(xml)
             { 
                 playerTxt=playerName[i].childNodes[0].nodeValue;
                 countryTxt=country[i].childNodes[0].nodeValue;
+                
+                //determine players age
+                var year = birth[i].childNodes[0].nodeValue.split("-"); 
+                ages[i] = yyyy-year[0];
+//                alert(ages[0]);
+                
                 infoTxt=
                         "Position:" + " " + pos[i].childNodes[0].nodeValue
                         +"<br>"
-                        + "DOB:" + " " + birth[i].childNodes[0].nodeValue
+                        + "Age:" + " " + ages[0]
                         +"<br>"
-                        +"Cost:" + " " + cost[i].childNodes[0].nodeValue               
-                        +"<br>";
                 
                 if(player[i].childNodes.length==23)
                     {
-//                            alert(player[0].childNodes.length);
-                        infoTxt+= "Height:" + " " + height[i].childNodes[0].nodeValue;
+                        infoTxt+= "Height:" + " " + height[i].childNodes[0].nodeValue
+                        +"<br>"
+
                     }
-                    
-//                if(cost[i].childNodes[0].nodeValue=="Free")
-//                    {
-//                        +"Cost:" + " " + "0";
-//                    }
-//                else
+                
+                    if(cost[i].childNodes[0].nodeValue==="Signed")
+                    {
+                        infoTxt+="Cost:" + " " + "Free";
+                    }
+                    else
+                    {
+                        +"Cost:" + " " + cost[i].childNodes[0].nodeValue;           
+                    }
+                
+                
+
             }
     
             document.getElementById("playerName").innerHTML = playerTxt;

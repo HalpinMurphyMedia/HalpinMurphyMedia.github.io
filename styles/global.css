@@ -112,7 +112,7 @@ a img {
 }
 
 #tableLive td{
-	background-color: #CCC;
+	background-color: #999999;
 }
 
 #players {
@@ -229,13 +229,11 @@ table a {
 }
 
 .awayG {
-		padding-top:25px;
-	height:12.5%;
+		padding-top:15px;
+	height:10%;
 	text-align:center;
 	font-weight:400;
-	color:#CCC;
-	font-weight:400;
-	color:#CCC;
+	color:black;
 }
 
 .awayD {
@@ -364,6 +362,7 @@ table {
 	width:100%;
 	min width:500px;
 }
+    
 
 .leaguetable {
 	width:100%;
@@ -493,6 +492,23 @@ tr {
 	padding-top:20px;
 	margin-top:10px;
 }
+    
+#teamName
+    {
+    text-align: center;
+    }
+ #stadium
+    {
+        display: inline;
+        margin-left: 10%;
+        float: left;
+    }
+#currentPos
+    {
+        display: inline;
+        margin-right: 10%;
+        float: right;
+    }
 
 .footer { 
 	width:100%;

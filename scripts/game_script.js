@@ -1,90 +1,120 @@
 // JavaScript Document
 
 var teamList=[];
+var splitTxtHome=[];
+var homeColour="";
+var awayColour="";
+var homeRange="";
+var awayRange="";
 
 //necessarry info for teams which was not given via api
 var celtic =new Object();
 celtic.name ="Celtic";
-celtic.colour = "green";
+celtic.colour = "#2E6F38";
+celtic.away="#255022";
+celtic.range = "green";
 celtic.secColour ="white";
 celtic.capacity = 60832;
 teamList.push(celtic);
 
-var ross =new Object();
-ross.name ="Ross County";
-ross.colour = "blue";
-ross.secColour ="white";
-ross.capacity = 6541;
-teamList.push(ross);
-
 var aberdeen =new Object();
 aberdeen.name ="Aberdeen";
-aberdeen.colour = "red";
+aberdeen.colour = "#D2312C";
 aberdeen.secColour ="white";
 aberdeen.capacity = 20916;
+aberdeen.away="#1F1F1F";
+aberdeen.range = "red";
 teamList.push(aberdeen);
 
 var stJohnstone =new Object();
 stJohnstone.name ="St Johnstone";
-stJohnstone.colour = "green";
-stJohnstone.secColour ="white";
+stJohnstone.colour = "#18327A";
+stJohnstone.secColour ="#1F1F1F";
 stJohnstone.capacity = 10696;
+stJohnstone.away="#E1E6FA";
+stJohnstone.range = "blue";
 teamList.push(stJohnstone);
 
 var motherwell =new Object();
 motherwell.name ="Motherwell";
-motherwell.colour = "red";
+motherwell.colour = "#F0AD35";
 motherwell.secColour ="white";
 motherwell.capacity = 13677;
+motherwell.away="#80222B";
+motherwell.range = "yellow";
 teamList.push(motherwell);
 
 var inverness =new Object();
 inverness.name ="Inverness C";
-inverness.colour = "green";
-inverness.secColour ="white";
+inverness.colour = "#184991";
+inverness.secColour ="#1F1F1F";
 inverness.capacity = 7800;
+inverness.away="#E1E6FA";
+inverness.range = "blue";
 teamList.push(inverness);
 
 var hearts =new Object();
 hearts.name ="Hearts";
-hearts.colour = "purple";
-hearts.secColour ="black";
+hearts.colour = "#80222B";
+hearts.secColour ="#1F1F1F";
 hearts.capacity = 17529;
+hearts.away="#BEBEBE";
+hearts.range = "red";
 teamList.push(hearts);
 
 var dundeeU =new Object();
 dundeeU.name ="Dundee United";
-dundeeU.colour = "orange";
-dundeeU.secColour ="black";
+dundeeU.colour = "#EC8127";
+dundeeU.secColour ="#1F1F1F";
 dundeeU.capacity = 14223;
+dundeeU.away="#E1E6FA";
+dundeeU.range = "yellow";
 teamList.push(dundeeU);
+
+
+var ross =new Object();
+ross.name ="Ross County";
+ross.colour = "#000F44";
+ross.away="#DC3232";
+ross.range = "blue";
+ross.secColour ="white";
+ross.capacity = 6541;
+teamList.push(ross);
 
 var dundee =new Object();
 dundee.name ="Dundee FC";
-dundee.colour = "blue";
+dundee.colour = "#031F4A";
+dundee.away="#5ABEFA";
+dundee.range = "blue";
 dundee.secColour ="white";
 dundee.capacity = 11506;
 teamList.push(dundee);
 
 var kilmarnock =new Object();
 kilmarnock.name ="Kilmarnock";
-kilmarnock.colour = "blue";
+kilmarnock.colour = "#222B7A";
 kilmarnock.secColour ="white";
 kilmarnock.capacity = 18182;
+kilmarnock.away="#1F1F1F";
+kilmarnock.range = "blue";
 teamList.push(kilmarnock);
 
 var partick =new Object();
-partick.name ="Partick Thistle";
-partick.colour = "red";
-partick.secColour ="orange";
+partick.name ="Partick";
+partick.colour = "#C81E28";
+partick.secColour ="yellow";
 partick.capacity = 10102;
+partick.away="#84B2CF";
+partick.range = "red";
 teamList.push(partick);
 
 var hamilton =new Object();
  hamilton.name ="Hamilton";
- hamilton.colour = "red";
+ hamilton.colour = "#AF3838";
 hamilton.secColour ="white";
  hamilton.capacity = 6018;
+hamilton.away="#78BEFA";
+hamilton.range = "red";
 teamList.push(hamilton);
 
 
@@ -188,18 +218,40 @@ function myFunction(xml)
                         emptySeats=stadiumTotalCap-filledSeats; 
                     }
                     //as well as getting total capacity of the stadium also get the teams colour to be used in the bg and their secondary colour to be                      used for font
-                        $(".teamOne").css("background-color",(teamList[y].colour));                          
+                        $(".teamOne").css("background-color",(teamList[y].colour));  
+                        homeColour=teamList[y].colour;
+                        homeRange=teamList[y].range;
+//                                            alert(homeRange);
+
                         $(".teamOne").css("color",(teamList[y].secColour));
+
    
                 }
                 //also loop thorugh to see if away team matches and if so also get their colour and font colour
                 if(aTeam[0].childNodes[0].nodeValue==teamList[y].name)
                     {
-                        $(".teamTwo").css("background-color",(teamList[y].colour));  
+                        
+                        $(".teamTwo").css("background-color",(teamList[y].away));  
+                        awayColour=teamList[y].away;
+//                        awayRange=teamList[y].range;
+//                        alert(awayRange);
+//                        alert(homeRange);
+
                         $(".teamTwo").css("color",(teamList[y].secColour));
+                        
+//                        if(homeRange==awayRange)
+//                        {
+////                            alert("match");
+//                            $(".teamTwo").css("background-color",(teamList[y].away));  
+//                            awayColour=teamList[y].away;
+//
+//                        }   
 
                     }
-            }
+                
+                 
+        }
+   
 
     
         for (i = 0; i < hTeam.length; i++) 
@@ -223,33 +275,58 @@ function myFunction(xml)
                 +"<br>"
                 + time[i].childNodes[0].nodeValue;
             
-              homeLineupTxt +=
-                  "<br>"
-                  + homeLG[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + homeLD[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + homeLM[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + homeLF[i].childNodes[0].nodeValue;
+//              homeLineupTxt +=
                   
+                  if(homeLG[i].childNodes.length>0)
+                  {
+                       homeLineupTxt +=" <div class=awayG><p>"+homeLG[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                if(homeLD[i].childNodes.length>0)
+                  {
+                       homeLineupTxt += " <div class=awayG><p>"+homeLD[i].childNodes[0].nodeValue+"</p></div>"   
+                  }
+                if(homeLM[i].childNodes.length>0)
+                  {    
+                       homeLineupTxt +=" <div class=awayG><p>"+homeLM[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                if(homeLF[i].childNodes.length>0)
+                  {    
+                       homeLineupTxt +=" <div class=awayG><p>"+homeLF[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                
+                if(awayLF[i].childNodes.length>0)
+                  {
+                       awayLineupTxt +=" <div class=awayG><p>"+awayLF[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                if(awayLM[i].childNodes.length>0)
+                  {
+                       awayLineupTxt += " <div class=awayG><p>"+awayLM[i].childNodes[0].nodeValue+"</p></div>"   
+                  }
+                if(awayLD[i].childNodes.length>0)
+                  {    
+                       awayLineupTxt +=" <div class=awayG><p>"+awayLD[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                if(awayLG[i].childNodes.length>0)
+                  {    
+                       awayLineupTxt +=" <div class=awayG><p>"+awayLG[i].childNodes[0].nodeValue+"</p></div>"
+                  }
+                
+                  
+              
+             
             
-            awayLineupTxt +=  
-                  "<br>"
-                  + awayLF[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + awayLM[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + awayLD[i].childNodes[0].nodeValue
-                  + "<br>"
-                  + awayLG[i].childNodes[0].nodeValue;
+//            awayLineupTxt +=  
+//             " <div class=awayG><p>"+awayLF[i].childNodes[0].nodeValue+"</p></div>"
+//              + " <div class=awayG><p>"+awayLM[i].childNodes[0].nodeValue+"</p></div>"   
+//              + " <div class=awayG><p>"+awayLD[i].childNodes[0].nodeValue+"</p></div>"
+//              + " <div class=awayG><p>"+awayLG[i].childNodes[0].nodeValue+"</p></div>";
                 
                 //gets the string of scorers from home side
                  if(homeGoalDets[i].childNodes.length>0)
                     {
                         homeGoalText = homeGoalDets[i].childNodes[0].nodeValue;
                         //split the string at ; mark which seperates each player
-                        var splitTxtHome = homeGoalText.split(";");
+                        splitTxtHome = homeGoalText.split(";");
                         //reverse the list to get the time in the correct order
                         splitTxtHome.reverse();    
                         //delete the first entry of the list which is now blabnk due to split method
@@ -360,9 +437,21 @@ function myFunction(xml)
                 
             }
             //display gathered information
-            document.getElementById("details").innerHTML += "Yellow Cards" + "<br>" +homeYellowFinal + awayYellowFinal;
-            document.getElementById("details").innerHTML += "Red Cards" + "<br>" + homeRedFinal + awayRedFinal;
-            document.getElementById("details").innerHTML += "Goals" + "<br>" + hGoalsDis + aGoalsDis;
+            document.getElementById("HCdetails").innerHTML += homeYellowFinal;
+            document.getElementById("ACdetails").innerHTML +=  awayYellowFinal;
+            document.getElementById("details").innerHTML += homeRedFinal + awayRedFinal;
+            document.getElementById("HGdetails").innerHTML += hGoalsDis;
+            document.getElementById("AGdetails").innerHTML += aGoalsDis;
+            $("#ACdetails").hide();
+            $("#HCdetails").hide();
+            $("#AGdetails").hide();
+            $("#HGdetails").hide();
+            $("#details").hide();
+
+
+    
+    
+    document.getElementById("field").innerHTML=homeLineupTxt+awayLineupTxt;
 
     
             document.getElementById("t1").innerHTML = teamOne;
@@ -376,6 +465,7 @@ function myFunction(xml)
 //load the charts for the page 
 function loadCharts()
   {
+  
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
   // -- First Chart --													GOALS
     $('#container').highcharts({
@@ -383,12 +473,12 @@ function loadCharts()
             type: 'bar'
         },
 // The next line allows for custom colours to be used but because both parts of chart are part of one series. So they only take the one colour attribute. If we add another series it would create another bar/pie chart in the same style.
-		colors: ['#0000FF', '#006600',],
+		colors: [homeColour, awayColour],
         title: {
             text: 'Goals'
         },
         xAxis: {
-            categories: [teamOne, teamTwo],
+            categories: " ",
             title: {
                 text: null
             }
@@ -425,10 +515,25 @@ function loadCharts()
             enabled: false
         },
         series: [{
-            name: 'Goals',
-            data: [homeGoals, awayGoals]
-        }]
+            name: teamOne,
+            data: [homeGoals]},             
+       {
+            name: teamTwo,
+            data: [awayGoals],
+                 
+            
+        },
+       ],
+        
+        tooltip: {
+            formatter: function() {return ' ' +
+  
+                teamOne + '<br />' + document.getElementById('HGdetails').innerHTML+ teamTwo+"<br/>" +document.getElementById('AGdetails').innerHTML;                           
+
+            }
+        }
     });
+      
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
   // -- Second Chart											ATTENDANCE
@@ -439,6 +544,8 @@ function loadCharts()
             plotShadow: false,
             type: 'pie'
         },
+      		colors: [homeColour, awayColour],
+
         title: {
             text: 'Attendance'
         },
@@ -479,11 +586,13 @@ function loadCharts()
         chart: {
             type: 'bar'
         },
+// The next line allows for custom colours to be used but because both parts of chart are part of one series. So they only take the one colour attribute. If we add another series it would create another bar/pie chart in the same style.
+		colors: [homeColour, awayColour],
         title: {
             text: 'Yellow Cards'
         },
         xAxis: {
-            categories: [teamOne, teamTwo],
+            categories: " ",
             title: {
                 text: null
             }
@@ -491,7 +600,7 @@ function loadCharts()
         yAxis: {
             min: 0,
             title: {
-                text: 'Yellow Cards',
+                text: 'Yellows',
                 align: 'high'
             },
             labels: {
@@ -520,9 +629,23 @@ function loadCharts()
             enabled: false
         },
         series: [{
-            name: 'Yellow Cards',
-            data: [homeYellowAmount, awayYellowAmount]
-        }]
+            name: teamOne,
+            data: [homeYellowAmount]},             
+       {
+            name: teamTwo,
+            data: [awayYellowAmount],
+                 
+            
+        },
+       ],
+        
+        tooltip: {
+            formatter: function() {return ' ' +
+  
+                teamOne + '<br />' + document.getElementById('HCdetails').innerHTML+ teamTwo+"<br/>" +document.getElementById('ACdetails').innerHTML;                           
+
+            }
+        }
     });
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -534,6 +657,8 @@ function loadCharts()
             plotShadow: false,
             type: 'pie'
         },
+      		colors: [homeColour, awayColour],
+
         title: {
             text: 'Red Cards'
         },

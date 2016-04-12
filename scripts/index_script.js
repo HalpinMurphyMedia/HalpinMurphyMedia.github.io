@@ -72,35 +72,58 @@ function myFunction(xml)
     var home, away, hTeam, aTeam, i, txt, xmlDoc; 
     xmlDoc = xml.responseXML;
     txt = "";
-    if( xmlDoc.getElementsByTagName("XMLSOCCER.COM").length < 2 )
-        {
-            //no live games currently on. display this message
-            document.getElementById("live").innerHTML = "No matches are currently being played";
-        }
-    else
-    {    
+//    if( xmlDoc.getElementsByTagName("XMLSOCCER.COM").length < 2 )
+//        {
+//            //no live games currently on. display this message
+//            document.getElementById("live").innerHTML = "No matches are currently being played";
+//        }
+//    else
+//    {    
         home = xmlDoc.getElementsByTagName("HomeGoals");
         away = xmlDoc.getElementsByTagName("AwayGoals");
         hTeam = xmlDoc.getElementsByTagName("HomeTeam");
         aTeam = xmlDoc.getElementsByTagName("AwayTeam");
+        matchId = xmlDoc.getElementsByTagName("Id");
+        homeId = xmlDoc.getElementsByTagName("HomeTeam_Id");
+        awayId = xmlDoc.getElementsByTagName("AwayTeam_Id");
 
         for (i = 0; i < home.length; i++) 
         { 
-        txt +="<tr>" 
-            + "<td>" 
+//        txt +="<tr>" 
+//            + "<td>" 
+//            + hTeam[i].childNodes[0].nodeValue 
+//            + "</td>"
+//            + "<td onclick=getMatchData()>"
+//            + home[i].childNodes[0].nodeValue
+//            + " "
+//            + away[i].childNodes[0].nodeValue
+//            + "</td>"
+//            + "<td>" 
+//            + aTeam[i].childNodes[0].nodeValue 
+//            + "</tr>";
+       txt+= "<tr>" 
+            + "<td onclick=getTeamData("+homeId[i].childNodes[0].nodeValue+")>" 
+            + '<a href="team.html">'
             + hTeam[i].childNodes[0].nodeValue 
+            +"</a>"
             + "</td>"
-            + "<td onclick=getMatchData()>"
+            + "<td onclick=getMatchData("+matchId[i].childNodes[0].nodeValue+")>"
+            + '<a href="game.html">'
             + home[i].childNodes[0].nodeValue
             + " "
             + away[i].childNodes[0].nodeValue
+            +"</a>"
             + "</td>"
-            + "<td>" 
+            + "<td onclick=getTeamData("+awayId[i].childNodes[0].nodeValue+")>" 
+            + '<a href="team.html">'
             + aTeam[i].childNodes[0].nodeValue 
-            + "</tr>";
+            +"</a>"
+            +"</td>"                
+            +"</tr>";
+            
         }
         document.getElementById("tableLive").innerHTML = txt;
-    }
+//    }
 }
 
 
@@ -156,7 +179,7 @@ function myFunction2(xml)
         txt +=
             "<tr>" 
             + "<td onclick=getTeamData("+homeId[i].childNodes[0].nodeValue+")>" 
-            + '<a href="teamInfo.html">'
+            + '<a href="team.html">'
             + hTeam[i].childNodes[0].nodeValue 
             +"</a>"
             + "</td>"
@@ -168,7 +191,7 @@ function myFunction2(xml)
             +"</a>"
             + "</td>"
             + "<td onclick=getTeamData("+awayId[i].childNodes[0].nodeValue+")>" 
-            + '<a href="teamInfo.html">'
+            + '<a href="team.html">'
             + aTeam[i].childNodes[0].nodeValue 
             +"</a>"
             +"</td>"                
