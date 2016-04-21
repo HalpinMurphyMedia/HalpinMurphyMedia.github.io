@@ -1,0 +1,766 @@
+@charset "utf-8";
+
+.mScore
+{
+font-weight: 600;
+    
+}
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #2E4052;
+	margin: 0;
+	padding: 0; 
+	color: #000;
+}
+
+a img {
+	border: none;
+}
+
+.container {
+	clear:both;
+	width: 80%;
+	min-width: 760px;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	/* position:absolute;
+	margin-top:0px;
+	display:inline-block;*/
+	background-color: #A0CA92;
+	width:100%;
+	height:200px;
+}
+
+.head-img {
+	float:left; 
+	/*display:inline;*/
+	width:200px;
+}
+
+
+.head-text {
+	float:left; 
+	/*width:50%;*/
+	margin: 0 auto;
+	margin-top:60px;
+	margin-left:100px;
+	padding-left:10px;
+	padding-right:10px; 
+}
+
+.head-text p {
+	font-size: 1.6em;
+	font-weight:bold;
+}
+
+.nav {
+	margin-top:-20px;
+	margin:0 auto;
+	float:left; 
+	width:100%;
+	text-align:center;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+	text-align:center;
+	width:100%;
+    background-color: #A0CA92;
+}
+
+.nav ul li {
+    float: left;
+	width:25%;
+}
+
+.nav ul li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.nav ul li a:hover {
+    background-color: #111;
+	color: white;
+}
+
+.content {
+	margin-top:70px;
+	min-height:1000px;
+	padding:20px;
+}
+
+#table {
+	width:80%;
+	border-right:1px;
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+#tableLive {
+	width:80%;
+	border-right:1px;
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+
+#table td{
+	background-color: #999;
+}
+
+#tableLive td{
+	background-color: #999999;
+}
+
+tr:nth-of-type(odd) {
+	background-color:#999;
+}
+
+tr:nth-of-type(even) {
+	background-color:#888;
+}
+
+#players {
+	width:50%;
+	min-width:500px;
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+/*
+#players td{
+	background-color: #CCC;
+}
+*/
+
+#prev td{
+text-align: center;
+}
+
+#leagueTable {
+	width:80%;
+	border-right:1px;
+}
+
+th {
+	background-color: #063;
+	color: #FFF;
+}
+
+#players th {
+	background-color: #063;
+	color: #FFF;
+}
+
+.shade_one{
+	background-color: #CCC;
+}
+
+.shade_two{
+	background-color: #999;
+}
+
+td {
+	text-align:center;
+}
+
+table a {
+	text-decoration:none;
+	color:#000;
+	
+}
+
+.points {
+	font-weight: bold;
+}
+
+.scorebar {
+	margin: 0 auto;
+	text-align:center;
+	height:100px;
+}
+
+.teamOne{
+	width: 40%;
+	background-color: #F00;
+	/* [disabled]color: #FFF; */
+	display: block;
+	float: left;
+	height: 100%;
+}
+
+.score{
+	width:20%;
+	background-color:#333;
+	color: #FFF;
+	display:block;
+	float:left;
+	height:100%;
+}
+
+.teamTwo{
+	width:40%;
+	background-color:#00F;
+	color: #FFF;
+	display:block;
+	float:left;
+	height:100%;
+}
+
+#mshots {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#mpassing {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#minfo {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#details {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+.field {
+	background-image:url(../images/field.jpg);
+	background-color: #063;
+	width:500px;
+	height:auto;
+	background-repeat:no-repeat;
+	
+}
+
+.awayG {
+/*    font-size: 2vh;*/
+		padding-top:13px;
+/*word-wrap: normal;*/
+    height:10%;
+    max-width: 100%;
+	text-align:center;
+	font-weight:400;
+	color:black;
+}
+
+.awayD {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.awayM {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.awayF {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeG {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeD {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeM {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+.homeF {
+		padding-top:25px;
+	height:12.5%;
+	text-align:center;
+	font-weight:400;
+	color:#CCC;
+}
+
+
+
+#mdisplay {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+	margin-top:10px;
+}
+
+#details {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+	margin-top:10px;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	background-color:#A0CA92;
+	margin-top:10px;
+	padding: 10px 0;
+	text-align:center;
+}
+
+.footer a {
+	color: #000;
+	font-weight:600;
+	text-decoration:underline;
+}
+
+/* -- Back to Top -- */
+.top {
+	float:left;
+}
+
+
+/* -- For HighCharts -- */
+${demo.css}
+
+/* ----------------------------------------------------------------*/
+
+/* -- For Media Queries (Mobile responsive -- */
+@media screen and (min-width: 480px) {
+body {
+        font-size:1.3em;
+}
+	
+.container {
+	clear:both;
+	width: 100%;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	width:100%;
+	height:150px;
+	background-color: #A0CA92;
+}
+
+.scorebar h1 {
+	font-size: 0.7em;
+}
+
+.head-text {
+	font-size: 0.7EM;
+}
+
+table {
+	width:100%;
+	min width:500px;
+}
+    
+
+#leagueTable {
+	width:100%;
+	border-right:1px;
+}
+
+th {
+	font-size:1.1em;
+}
+
+td {
+	font-size:1.1em;
+}
+
+tr {
+	font-size:1.1em;
+}
+	
+#leagueTable td:nth-of-type(1) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(1) {
+	display: none;
+}
+
+#leagueTable td:nth-of-type(4) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(4) {
+	display: none;
+}
+
+#leagueTable td:nth-of-type(5) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(5) {
+	display: none;
+}
+
+#leagueTable td:nth-of-type(6) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(6) {
+	display: none;
+}
+
+#leagueTable td:nth-of-type(7) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(7) {
+	display: none;
+}
+
+#leagueTable td:nth-of-type(8) {
+	display: none;
+}
+
+#leagueTable th:nth-of-type(8) {
+	display: none;
+}
+	
+#mshots {
+	display:block;
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+
+#mpassing {
+	display:block;
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+
+#minfo {
+	display:block;
+	width:100%;
+	float:left;
+	margin-top:10px;
+}
+
+#mdisplay {
+	clear:both;
+	margin-top:10px;
+	padding-top:10px;
+	margin-top:10px;
+}
+
+#details {
+	clear:both;
+	margin-top:10px;
+	padding-top:10px;
+	margin-top:10px;
+}
+
+.footer { 
+	width:100%;
+	font-size:1.3em;
+}
+
+    #playerName
+    {
+    text-align: center;
+    }
+    
+
+    #country
+    {
+        display: inline;
+        margin-left: 10%;
+        float: left;
+    }
+    
+    #pos
+    {
+        display: inline;
+        margin-right: 10%;
+        float: right;
+    }
+    
+    #info
+    {
+           text-align: center;
+
+    }
+    
+}
+
+@media screen and (min-width: 720px) {
+body {
+        font-size:1.1em;
+}
+	
+.container {
+	clear:both;
+	width: 80%;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	width:100%;
+	height:200px;
+	background-color: #A0CA92;
+}
+
+.head-text {
+	font-size: 1.1EM;
+}
+
+#leagueTable {
+	width:90%;
+	border-right:1px;
+}
+
+th {
+	font-size:1.1em;
+}
+
+td {
+	font-size:1.1em;
+}
+
+tr {
+	font-size:1.1em;
+}
+
+.scorebar h1 {
+	font-size: 1.1em;
+}
+
+#mshots {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#mpassing {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#minfo {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#mdisplay {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+	margin-top:10px;
+}
+    
+#teamName
+    {
+    text-align: center;
+    }
+ #stadium
+    {
+        display: inline;
+        margin-left: 10%;
+        float: left;
+    }
+#currentPos
+    {
+        display: inline;
+        margin-right: 10%;
+        float: right;
+    }
+
+.footer { 
+	width:100%;
+	font-size:1.1em;
+}
+}
+
+@media screen and (min-width: 1280px) {
+body {
+        font-size:1.0em;
+}
+	
+.container {
+	clear:both;
+	width: 80%;
+	background-color: #9DA9A0;
+	margin: 0 auto; /* centers the layout. */
+}
+
+.header {
+	width:100%;
+	height:200px;
+	background-color: #A0CA92;
+}
+
+.head-text {
+	font-size: 1.0EM;
+}
+
+#leagueTable {
+	width:80%;
+	border-right:1px;
+}
+
+th {
+	font-size:1.0em;
+}
+
+td {
+	font-size:1.0em;
+}
+
+tr {
+	font-size:1.0em;
+}
+
+#leagueTable td:nth-of-type(1) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(1) {
+	display: table-cell;
+}
+
+#leagueTable td:nth-of-type(4) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(4) {
+	display: table-cell;
+}
+
+#leagueTable td:nth-of-type(5) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(5) {
+	display: table-cell;
+}
+
+#leagueTable td:nth-of-type(6) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(6) {
+	display: table-cell;
+}
+
+#leagueTable td:nth-of-type(7) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(7) {
+	display: table-cell;
+}
+
+#leagueTable td:nth-of-type(8) {
+	display: table-cell;
+}
+
+#leagueTable th:nth-of-type(8) {
+	display: table-cell;
+}
+
+.scorebar h1 {
+	font-size: 1.0em;
+}
+
+#mshots {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#mpassing {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#minfo {
+	display:block;
+	width:50%;
+	float:left;
+	margin-top:10px;
+}
+
+#mdisplay {
+	clear:both;
+	margin-top:20px;
+	padding-top:20px;
+	margin-top:10px;
+}
+    
+#teamName
+    {
+    text-align: center;
+    }
+#stadium
+    {
+        display: inline;
+        margin-left: 10%;
+        float: left;
+    }
+#currentPos
+    {
+        display: inline;
+        margin-right: 10%;
+        float: right;
+    }
+
+.footer { 
+	width:100%;
+	font-size:1.1em;
+}
+}

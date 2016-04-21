@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title id="title">Footie Stats-</title>
+            <link href="styles/global.css" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+            <script src="scripts/custom.js"></script>
+
+            <script src="scripts/game_script.js"></script> <!-- MyCustom HighCharts file -->
+      	<!-- General HighCharts Files -->
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+    		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <!-- End of General HighCharts Files -->
+    	<!-- Start Analytics -->
+            <script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-75907608-1', 'auto');
+				ga('send', 'pageview');
+			</script>
+		<!-- End Analytics -->
+    </head>
+
+<body>   
+	<a name="top"></a>
+	<div class="header">
+		<div class="head-img">
+			<a href="index.html"><img src="images/footie_stats_logo.png" alt="logo"></a>
+		<!-- end .head-img --></div> 
+      
+		<div class="head-text">
+        	<p>Scottish Premier League by Footie Stats</p>
+        <!-- end .head-text --></div>
+	<!-- end .header --></div>
+    <div class="nav">
+		<ul>
+			<li><a href="index.html">Games</a></li>
+			<li><a href="table.html">League Table</a></li>
+			<li><a href="player.html">Top Scorers</a></li>
+			<li><a href="info.html">Info</a></li>
+		</ul> 
+        <!-- end .nav --></div>
+    
+<div class="container">
+  <div class="content">
+   	<div class="scorebar"> <div class="teamOne"><h1 id="t1">Blank</h1></div> <div id="score" class="score">VS</div> <div class="teamTwo"><h1 id="t2">Blank</h1></div> </div>
+<!--    Dynamically created highcharts located in here. All have a seperate id to avoid confusion    -->
+    
+      <div id="mshots">
+        <br/>
+        <div id="container" style="margin: 0 auto"></div>
+        <div id="container2" style="margin: 0 auto"></div>
+    </div>
+      
+    <div id="mpassing">
+        <br/>
+        <div id="container5" style="margin: 0 auto"></div>
+        <div id="container6" style="margin: 0 auto"></div>
+    </div>
+    <div id="minfo"><p>Match Info</p>
+    	<div class="field" id="field">
+        	<div class="awayG"><p>Away Goalie</p></div>
+            <div class="awayD"><p>Away def, Away def, Away def, Away def</p></div>
+            <div class="awayM"><p>Away Mid, Away Mid, Away Mid,</p></div>
+            <div class="awayF"><p>Away Fwd, Away Fwd, Away Fwd</p></div>
+            <div class="homeF"><p>Home Fwd, Home Fwd</p></div>
+            <div class="homeM"><p>Home Mid, Home Mid, Home Mid, Home Mid</p></div>
+            <div class="homeD"><p>Home Def, Home Def, Home Def, Home Def</p></div>
+            <div class="homeG"><p>Home Goalie</p></div>
+        </div> <!-- End Field -->
+    </div>
+<p id="HGdetails"></p>
+<p id="AGdetails"></p>
+<p id="HRdetails"></p>
+<p id="HRdetails"></p>
+<p id="details"></p>
+<p id="HCdetails"></p>
+<p id="ACdetails"></p>
+<p id="subs">Sub Deatils <br></p>      
+  
+    
+      
+</p>      
+    <div id="mdisplay">
+<!--
+    	<button type="button" onclick="hideShot()">Hide Shots</button>
+        <button type="button" onclick="hidePassing()">Hide Passing</button>
+        <button type="button" onclick="hideTackling()">Hide Tackling</button>
+        <button type="button" onclick="hideInfo()">Hide Info</button>
+        <br/>
+        <button type="button" onclick="showShot()">Show Shots</button>
+        <button type="button" onclick="showPassing()">Show Passing</button>
+        <button type="button" onclick="showTackling()">Show Tackling</button>
+		<button type="button" onclick="showInfo()">Show Info</button>
+-->
+    </div>
+    
+    <!-- end .content --></div>
+  <!-- end .container --></div>
+	<div class="footer">
+		<div class="top">
+			<a href='#top'>Back to Top</a>
+		<!-- end .top --></div>
+    <p>Footie Stats and HMM logos are property of their respective owners</p>
+    <a href="hmm.html">Site created by HMM Media</a>
+    <!-- end .footer --></div>
+</body>
+</html>
